@@ -24,7 +24,6 @@ this.price = price;
 this.isLaptop = true;
 
 }
-
 //třetí konstruktor
 public  Computer (String model, BigDecimal price) {
 this(model, 15.6, true, price, true);

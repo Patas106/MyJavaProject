@@ -11,25 +11,25 @@ Computer computer4 = new Computer(true, new BigDecimal(2000)); //použití čtvr
 
 
 
-    computer.setModel("ABC123");
+computer.setModel("ABC123");
 System.out.println("Model: " + computer.getModel());
 System.out.println(computer.isOverPriceLimit(new BigDecimal(1000)));
 System.out.println(computer4.getModel());
-    System.out.println(computer4);
+System.out.println(computer4);
 System.out.println(computer3.getDescription());
 
 //seznam počítačů
-    List<Computer> seznamPocitacu = new ArrayList<>();
-    seznamPocitacu.add(computer);
-    seznamPocitacu.add(computer2);
-    seznamPocitacu.add(new Computer(true, new BigDecimal(2000)));
-    //seznamPocitacu.remove(computer);
-    System.out.println("---------------------------------");
-    System.out.println(seznamPocitacu.get(1));
-    seznamPocitacu.forEach(System.out::println);
-    //nastavím všem počítačům cenu na 40000
-    for (Computer pocitac : seznamPocitacu) {
-    pocitac.setPrice(new BigDecimal(40000));
-    }
+List<Computer> seznamPocitacu = new ArrayList<>();
+seznamPocitacu.add(computer);
+seznamPocitacu.add(computer2);
+seznamPocitacu.add(new Computer(true, new BigDecimal(2000)));
+//seznamPocitacu.remove(computer);
+System.out.println("---------------------------------");
+System.out.println(seznamPocitacu.get(1));
+seznamPocitacu.forEach(System.out::println);
+//nastavím všem počítačům cenu na 40000
+for (Computer pocitac : seznamPocitacu) {
+pocitac.setPrice(new BigDecimal(40000));
+}
 }
 };
