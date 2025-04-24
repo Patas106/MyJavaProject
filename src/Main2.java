@@ -30,6 +30,7 @@ seznamPocitacu.forEach(System.out::println);
 //nastavím všem počítačům cenu na 40000
 for (Computer pocitac : seznamPocitacu) {
 pocitac.setPrice(new BigDecimal(40000));
+System.out.println(pocitac.getPrice());
 }
 }
 };
