@@ -1,21 +1,19 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.time.LocalDate;
+
 public class Main {
-    public static void main(String[] args) {
-    int vymera = 250;
-    String popis = "Sad je v parku";
-    int cenaZaMetr = 100;
+public static void main(String[] args) {
+Seller seller1 = new Seller("John Doe", LocalDate.of(1985, 5, 15), 100, 50.0, true);
+Seller seller2 = new Seller("Jane Smith", LocalDate.of(1990, 8, 20), 200, 75.6, false);
 
-    Pozemek sadOsmicka = new Pozemek(150, "Koloho", 400);
-    Pozemek sadOsmicka2 = new Pozemek(250, "Humanoid", 150);
-        System.out.println(sadOsmicka2.getPopis());
+printSellerInfo("first", seller1, "He");
+printSellerInfo("second", seller2, "She");
+}
 
-    // Vypocet ceny
-    int cena = vymera * cenaZaMetr;
-
-        System.out.println("Pozemek ma rozlohu " + vymera + " m2" + " a cena je " + cena + " Kc");
-
-
-
-    }
+public static void printSellerInfo(String order, Seller seller, String pronoun) {
+System.out.println("The " + order + " seller's name is " + seller.getName()
++ ". " + pronoun + " was born on " + seller.getDateOfBirth()
++ ", completed " + seller.getNumberOfTransactions() + " transactions"
++ ", sold " + seller.getTonsOfCarrotsSold() + " tons of carrots"
++ ", and is " + (seller.isSeniorSeller() ? "a senior seller." : "not a senior seller."));
+}
 }
