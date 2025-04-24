@@ -17,7 +17,7 @@ this.isLaptop = isLaptop;
 }
 //druhej konstruktor
 public Computer (BigDecimal price) {
-this.model = "Hipo";
+this.model = "Dell";
 this.diagonalOfScreen = 15.6;
 this.isCompanyComputer = true;
 this.price = price;
@@ -87,4 +87,23 @@ return isLaptop;
 public void setLaptop(boolean laptop) {
 this.isLaptop = laptop;
 }
+
+public String getDescription() {
+  return "Model: " + model + ", Diagonal of Screen: " + diagonalOfScreen +
+          ", Is Company Computer: " + isCompanyComputer + ", Price: " + price +
+          ", Is Laptop: " + isLaptop;
+
+}
+
+
+    @Override // co dělá override? override je přepsání
+    public String toString() {
+        return "Computer{" +
+                "model='" + model + '\'' +
+                ", diagonalOfScreen=" + diagonalOfScreen +
+                ", isCompanyComputer=" + isCompanyComputer +
+                ", price=" + price +
+                ", isLaptop=" + isLaptop +
+                '}';
+    }
 }
