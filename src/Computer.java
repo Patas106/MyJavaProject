@@ -88,21 +88,21 @@ this.isLaptop = laptop;
 }
 
 public String getDescription() {
-  return "Model: " + model + ", Diagonal of Screen: " + diagonalOfScreen +
-          ", Is Company Computer: " + isCompanyComputer + ", Price: " + price +
-          ", Is Laptop: " + isLaptop;
+return "Model: " + model + ", Diagonal of Screen: " + diagonalOfScreen +
+", Is Company Computer: " + isCompanyComputer + ", Price: " + price +
+", Is Laptop: " + isLaptop;
 
 }
 
 
-    @Override // co dělá override? override je přepsání
-    public String toString() {
-        return "Computer{" +
-                "model='" + model + '\'' +
-                ", diagonalOfScreen=" + diagonalOfScreen +
-                ", isCompanyComputer=" + isCompanyComputer +
-                ", price=" + price +
-                ", isLaptop=" + isLaptop +
-                '}';
-    }
+@Override // co dělá override? override je přepsání
+public String toString() {
+return "Computer{" +
+"model='" + model + '\'' +
+", diagonalOfScreen=" + diagonalOfScreen +
+", isCompanyComputer=" + isCompanyComputer +
+", price=" + price +
+", isLaptop=" + isLaptop +
+'}';
+}
 }
