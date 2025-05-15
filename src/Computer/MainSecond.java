@@ -1,8 +1,10 @@
+package Computer;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main2 {
+public class MainSecond {
 public static void main(String[] args) {
 Computer computer = new Computer( "ABC123", 15.6, true, new BigDecimal(1200), true);
 Computer computer2 = new Computer( "XYZ789", 17.3, false, new BigDecimal(800), false);

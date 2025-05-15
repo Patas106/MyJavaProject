@@ -1,3 +1,5 @@
+package Computer;
+
 import java.math.BigDecimal;
 
 
@@ -8,7 +10,7 @@ private boolean isCompanyComputer;
 private BigDecimal price;
 private boolean isLaptop;
 
-public Computer /* Computer je návratový typ Konstrokturu*/(String model, double diagonalOfScreen, boolean isCompanyComputer, BigDecimal price, boolean isLaptop) {
+public Computer /* Computerr je návratový typ Konstrokturu*/(String model, double diagonalOfScreen, boolean isCompanyComputer, BigDecimal price, boolean isLaptop) {
 this.model = model;
 this.diagonalOfScreen = diagonalOfScreen;
 this.isCompanyComputer = isCompanyComputer;
@@ -89,7 +91,7 @@ this.isLaptop = laptop;
 
 public String getDescription() {
 return "Model: " + model + ", Diagonal of Screen: " + diagonalOfScreen +
-", Is Company Computer: " + isCompanyComputer + ", Price: " + price +
+", Is Company Pc: " + isCompanyComputer + ", Price: " + price +
 ", Is Laptop: " + isLaptop;
 
 }
@@ -97,7 +99,7 @@ return "Model: " + model + ", Diagonal of Screen: " + diagonalOfScreen +
 
 @Override // co dělá override? override je přepsání
 public String toString() {
-return "Computer{" +
+return "Pc{" +
 "model='" + model + '\'' +
 ", diagonalOfScreen=" + diagonalOfScreen +
 ", isCompanyComputer=" + isCompanyComputer +
