@@ -3,7 +3,7 @@ package fourthClass;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public class Item {
+public class Item implements Comparable<Item> {
     private String description;
     private BigDecimal price;
     private LocalDateTime reservationDate;
@@ -11,18 +11,17 @@ public class Item {
     private int quantity;
     private Category category;
 
-
     public Item(String description, BigDecimal price, LocalDateTime reservationDate, int quantity, boolean isOnStock, Category category) throws CartException {
         this.description = description;
-        // private BigDecimal price; místo toho mohu volat setter
-        setPrice(price); // v něm už mám definovanou výjimku
+        setPrice(price);
         this.reservationDate = reservationDate;
         this.quantity = quantity;
         this.isOnStock = isOnStock;
         this.category = category;
     }
-    public Item(String description, BigDecimal price, Category category) throws CartException{
-        this (description, price, LocalDateTime.now(), 1, true, category);
+
+    public Item(String description, BigDecimal price, Category category) throws CartException {
+        this(description, price, LocalDateTime.now(), 1, true, category);
     }
 
     public String getDescription() {
@@ -38,8 +37,8 @@ public class Item {
     }
 
     public void setPrice(BigDecimal price) throws CartException {
-        if(price.compareTo(BigDecimal.ZERO) < 0) {
-            throw new CartException ("Cena položky nemůže být záporná: " + price + " Kč");
+        if (price.compareTo(BigDecimal.ZERO) < 0) {
+            throw new CartException("Cena položky nemůže být záporná: " + price + " Kč");
         }
         this.price = price;
     }
@@ -67,10 +66,29 @@ public class Item {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+
     public Category getCategory() {
         return category;
     }
+
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "description='" + description + '\'' +
+                ", price=" + price +
+                ", reservationDate=" + reservationDate +
+                ", isOnStock=" + isOnStock +
+                ", quantity=" + quantity +
+                ", category=" + category +
+                '}';
+    }
+
+    @Override
+    public int compareTo(Item other) {
+        return this.price.compareTo(other.price); // porovnání podle ceny vzestupně
     }
 }
