@@ -1,3 +1,5 @@
+package Seller;
+
 import java.time.LocalDate;
 
 public class Seller {
