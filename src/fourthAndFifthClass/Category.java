@@ -1,4 +1,4 @@
-package fourthClass;
+package fourthAndFifthClass;
 
 public enum Category {
     food("Jídlo"),
@@ -17,3 +17,4 @@ public enum Category {
 public String toString() {
         return name;
     }}
+

@@ -1,4 +1,4 @@
-package fourthClass;
+package fourthAndFifthClass;
 
 public class CartException extends Exception { //Exception je hlídaná výjímka
   public CartException(String message) {

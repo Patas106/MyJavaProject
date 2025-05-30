@@ -1,8 +1,12 @@
-package fourthClass;
+package fourthAndFifthClass;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Scanner;
 
 public class Cart {
     private List<Item> items = new ArrayList<>();
@@ -43,9 +47,31 @@ public class Cart {
     public void sortByCategoryAndPrice() {
         items.sort(Comparator.comparing(Item::getCategory).thenComparing(Item::getPrice));
     }
-public Item getItem (int index) {
+
+
+    public Item getItem (int index) {
         return  items.get (index);
-}
+}   //načítání ze souboru
+    public void readFromTextFile(String filePath, String delimiter) throws CartException {
+       int lineNumber = 0;
+        try (Scanner scanner = new Scanner(new BufferedReader(new FileReader(filePath))))  { //otevření souboru
+            items.clear();
+            while (scanner.hasNextLine()) {
+                lineNumber++;
+                String record = scanner.nextLine();
+                String[] fields = record.split(delimiter); //rozdělení řádku podle oddělovače
+               // items.add(new Item(fields));
+
+                System.out.println("" + lineNumber+":" + record);
+
+
+            }
+        } catch (FileNotFoundException e) {
+            throw new CartException("Soubor " +filePath+ "nebylo mžno otevřít: " + e.getLocalizedMessage());
+        }
+    }
+
+
 }
 
 
